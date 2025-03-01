@@ -32,13 +32,16 @@
                
             </div>
                 <div class="card-body align-items-center">
-                    <form action="" method="POST">
-
+                    <form action="user-register" method="POST">
+                        @csrf
                         <div class="mb-3 mt-3">
                             <label for="email" class="form-label"><b>Nome:</b></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span><input type="text" class="form-control" id="text" placeholder="Digite seu nome..." name="nome">
                             </div>
+                            @error('nome')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="mb-3 mt-3">
@@ -46,12 +49,18 @@
                             <div class="input-group">
                                 <span class="input-group-text">@</span><input type="email" class="form-control" id="email" placeholder="Digite seu email..." name="email">
                             </div>
+                            @error('email')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3 mt-3">
                             <label for="email" class="form-label"><b>CPF:</b></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span><input  oninput="mascaraCPF(this)" type="text" class="form-control" id="text" placeholder="Digite seu cpf..." name="cpf">
                             </div>
+                            @error('cpf')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="mb-3 mt-3">
@@ -59,6 +68,9 @@
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i></span><input onkeyup="setarCepMascara(event)"  maxlength="9" type="text" class="form-control" id="text" placeholder="Digite seu cep..." name="cep">
                             </div>
+                            @error('cep')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         
@@ -67,6 +79,9 @@
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span><input type="password" class="form-control" id="pwd" placeholder="Digite sua senha..." name="senha">
                             </div>
+                            @error('senha')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
@@ -74,13 +89,15 @@
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span><input type="password" class="form-control" id="pwd" placeholder="Digite sua senha novamente..." name="confirmed_senha">
                             </div>
+                            @error('confirmed_senha')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary botao_v2"><b>Cadastrar</b></button><hr>
                     </form>
-                    
                     <div class="d-flex justify-content-center align-items-cente">  
-                        <a href="login.html" class="btn-primary"><b>Estou cadastrado</b></a>
+                        <a href="login" class="btn-primary"><b>Estou cadastrado</b></a>
                     </div>
 
                 </div>

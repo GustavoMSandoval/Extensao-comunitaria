@@ -31,8 +31,8 @@
                
             </div>
                 <div class="card-body align-items-center">
-                    <form action="" method="POST">
-
+                    <form action="user-login" method="POST">
+                        @csrf
                         <div class="mb-3 mt-3">
                             <label for="email" class="form-label"><b>Email:</b></label>
                             <div class="input-group">
@@ -53,7 +53,7 @@
                     </form>
                     
                     <div class="d-flex justify-content-center align-items-cente">  
-                        <a href="cadastrar.html" class="btn-primary"><b>Não estou cadastrado</b></a>
+                        <a href="cadastrar" class="btn-primary"><b>Não estou cadastrado</b></a>
                     </div>
                   
                 </div>

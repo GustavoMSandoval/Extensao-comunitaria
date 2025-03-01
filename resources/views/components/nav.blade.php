@@ -17,10 +17,6 @@
             'name' => 'Usuário',
             'route' => '/usuario'
         ],
-        [
-            'name' => 'Sair',
-            'route' => '/login'
-        ],
         
     ];
 @endphp
@@ -45,9 +41,14 @@
                 @foreach ($navLinks as $navLink)                        
                     <li class="nav-item">
                         <a class="nav-link fw-bold px-3" href="{{$navLink['route']}}"><b>{{$navLink['name']}}</b></a>
-                        
                     </li>
                 @endforeach
+                <li class="nav-item">
+                    <form  action="logout" method="POST">
+                        @csrf
+                        <button class="nav-link fw-bold px-3" type="submit">Sair</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
