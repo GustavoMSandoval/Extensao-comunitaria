@@ -85,8 +85,17 @@
                     </button>
                 </div>
                 
-                <div class="row row-cols-1 row-cols-md-4 g-0 w-100" > 
-                    <x-clinica-component/>
+                <div class="row row-cols-1 row-cols-md-4 g-0 w-100"> 
+                    @isset($clinicas)
+                        @foreach ($clinicas as $item)
+                                <x-clinica-component 
+                                nome="{{$item->nome_clinica}}"
+                                endereco="{{ $item->rua_clinica }}" 
+                                telefone="{{ $item->telefone_clinica }}" 
+                                horaAbertura="{{ \Carbon\Carbon::parse($item->hora_abertura_clinica)->format('H:i') }}" 
+                                horaFechamento="{{ \Carbon\Carbon::parse($item->hora_fechamento_clinica)->format('H:i') }}"/>
+                        @endforeach
+                    @endisset
                 </div>
             </div>
         </div>
@@ -124,18 +133,19 @@
             
                     <!-- body -->
                     <div class="modal-body">
-                        <form action="register-clinica" method="POST">
+                        <form action="register-clinica" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
     
-                                    <label for="inputImagem1" class="form-label fw-bold">Escolha a Primeira Imagem</label>
-                                        <input class="form-control" type="file" name="inputImagem1" id="inputImagem1" accept="image/*">
+                                    <label for="primeira_imagem" class="form-label fw-bold">Escolha a Primeira Imagem</label>
+                                        <input class="form-control" type="file" name="primeira_imagem" id="primeira_imagem" accept="image/*">
     
-                                    <label for="inputImagem1" class="form-label fw-bold">Escolha a Segunda Imagem</label>
-                                        <input class="form-control" type="file"  name="inputImagem2" id="inputImagem2" accept="image/*">
+                                    <label for="segunda_imagem" class="form-label fw-bold">Escolha a Segunda Imagem</label>
+                                        <input class="form-control" type="file"  name="segunda_imagem" id="segunda_imagem" accept="image/*">
     
-                                    <label for="inputImagem1" class="form-label fw-bold">Escolha a Terceira Imagem</label>
-                                        <input class="form-control" type="file" name="inputImagem3" id="inputImagem3" accept="image/*">
+                                    <label for="terceira_imagem" class="form-label fw-bold">Escolha a Terceira Imagem</label>
+                                        <input class="form-control" type="file" name="terceira_imagem" id="terceira_imagem" accept="image/*">
     
                                     <label for="email"><b>Nome da Clinica </b></label>
                                         <input class="form-control" type="text" name="nome_clinica" placeholder="Nome da clínica...">
@@ -157,18 +167,15 @@
                                         <option value="aberto">Aberta</option>
                                         <option value="finalizado">Fechada</option>
                                     </select>
-    
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-outline-success" ><b>Enviar</b></button>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><b>Fechar</b></button>
                             </div>
                         </form>
                     </div>
-            
                     <!-- footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal"><b>Enviar</b></button>
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><b>Fechar</b></button>
-                    </div>
-        
                 </div>
             </div>
         </div>

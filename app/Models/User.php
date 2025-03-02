@@ -49,4 +49,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function userClinicas() {
+        return $this->hasMany(Clinica::class, 'user_id');
+    }
+
+    public function userAgendamentos() {
+        return $this->hasMany(Agendamento::class, 'user_id');
+    }
+
+    public function userEndereco() {
+        return $this->hasOne(Endereco::class, 'user_id');
+    }
 }

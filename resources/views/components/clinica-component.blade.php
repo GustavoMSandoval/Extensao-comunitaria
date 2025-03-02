@@ -30,19 +30,19 @@
         
           <div class="card-body ">
 
-            <h4 class="card-title fw-bold text-primary">Clínica Borba Gato MSP</h4>                         
+            <h4 class="card-title fw-bold text-primary">{{ $nome }}</h4>                         
             <hr class="my-2">
             
             <p class="card-text">
-                <i class="fa fa-home" aria-hidden="true"></i></i> <b> Endereço:</b> R. Barão do Rio Branco, 303
+                <i class="fa fa-home" aria-hidden="true"></i></i> <b> Endereço:</b> {{ $endereco }}
             </p>
 
             <p class="card-text">
-                <i class="fa fa-phone" aria-hidden="true"></i> <b> Telefone:</b> (11) 97257-7291
+                <i class="fa fa-phone" aria-hidden="true"></i> <b> Telefone:</b> {{ $telefone }}
             </p>
 
             <p class="card-text">
-                <i class="fa fa-clock-o" aria-hidden="true"></i> <b> Horário:</b> 18:00hrs - 19:00hrs
+                <i class="fa fa-clock-o" aria-hidden="true"></i> <b> Horário:</b> {{ $horaAbertura }}hrs - {{ $horaFechamento }}hrs
             </p>
             <hr class="my-2">
             

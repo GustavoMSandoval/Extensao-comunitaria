@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
+            $table->string('cep', 9);
+            $table->string('logradouro');
+            $table->string('bairro');
+            $table->string('complemento');
+            $table->string('numero');
+            $table->string('uf');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }

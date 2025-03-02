@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('clinicas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('rua');
-            $table->string('telefone', 11);
-            $table->time('hora_abertura');
-            $table->time('hora_fechamento');
-            $table->boolean('situacao');
+            $table->string('primeira_imagem');
+            $table->string('segunda_imagem')->nullable();
+            $table->string('terceira_imagem')->nullable();
+            $table->string('nome_clinica');
+            $table->string('rua_clinica');
+            $table->string('telefone_clinica', 11);
+            $table->time('hora_abertura_clinica');
+            $table->time('hora_fechamento_clinica');
+            $table->boolean('situacao_clinica');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }

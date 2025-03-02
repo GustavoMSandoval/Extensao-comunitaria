@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Agendamento extends Model
 {
     protected $fillable = [
-        'nome',
+        'nome_clinica',
         'rua',
         'data',
         'hora',
-        'situacao'
+        'situacao',
+        'user_id'
     ];
 }

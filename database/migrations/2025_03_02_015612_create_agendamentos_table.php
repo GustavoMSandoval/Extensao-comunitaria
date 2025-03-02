@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome_clinica');
+            $table->string('rua');
+            $table->date('data');
+            $table->time('hora');
+            $table->boolean('situacao');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }
