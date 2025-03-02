@@ -69,33 +69,7 @@
     
     <body>
         <div class="bg-blue-dark text-white text-center">
-            <nav class="navbar navbar-expand-sm bg-blue-dark navbar-dark">
-                <div class="container-fluid">
-                    <ul class="navbar-nav me-auto" style="margin-left:15%"> <!-- Itens da esquerda -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><b>Quem somos nós</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><b>Informações do sistema</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><b>Objetivos da Clínica</b></a>
-                        </li>
-                    </ul>
-        
-                    <ul class="navbar-nav" style="margin-right:15%"> <!-- Itens das redes sociais -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <x-descricao/>
         </div>
         
         <x-nav/>
@@ -106,47 +80,11 @@
                     <h3 class="fw-bold text-white">Seus Agendamentos</h3>
                 </div>
                 <div class="row row-cols-1 row-cols-md-4 g-0 w-100" > <!-- Sem espaçamento extra -->
-                    <div class="col" style="padding:5px">
-                        <div class="card h-100 shadow border-0">
-                            <img src="clinica_1.jpg" class="cards_ajuste" alt="Imagem">
-                            <div class="card-body">
-                                <h4 class="card-title fw-bold text-primary">Clínica Interlagos MSP</h4>
-                                
-                                <hr class="my-2">
-                                
-                                <p class="card-text">
-                                    <i class="fa fa-home" aria-hidden="true"></i><b> Endereço:</b> R. Barão do Rio Branco, 303
-                                </p>
-                                <p class="card-text">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i><b> Data:</b> 19/02/2025
-                                </p>
-                                <p class="card-text">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i><b> Horário:</b> 18:00 hrs
-                                </p>
-                                <p class="card-text">
-                                    <i class="fa fa-info-circle" aria-hidden="true"></i><b> Situação:</b> <span class="fw-bold text-success">Marcado</span>
-                                </p>
-                            
-                                <hr class="my-2">
-                            
-                                <div class="d-flex justify-content-center gap-2">
-                                    <button class="btn btn-outline-primary" id="editarAgendamentos|1">
-                                        <i class="bi bi-pencil"></i> <b>Editar</b>
-                                    </button>
-                                    <button class="btn btn-outline-danger" id="CancelarAgendamento|1">
-                                        <i class="bi bi-x-circle"></i> <b>Cancelar</b>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <x-agendamento/>
                 </div>
             </div>
         </div>
         
-
-
-
         <a href="#" class="whatsapp-icon" title="Chat no WhatsApp" onclick="aberturaChat()">
             <i class="fa fa-weixin" aria-hidden="true" style="font-size: 40px;"></i>
         </a>

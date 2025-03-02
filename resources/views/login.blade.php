@@ -47,8 +47,6 @@
                             </div>
                         </div>
 
-                       
-
                         <button type="submit" class="btn btn-primary botao_v2"><b>Avançar</b></button><hr>
                     </form>
                     

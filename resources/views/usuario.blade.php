@@ -69,35 +69,7 @@
     </style>
     
     <body>
-        <div class="bg-blue-dark text-white text-center">
-            <nav class="navbar navbar-expand-sm bg-blue-dark navbar-dark">
-                <div class="container-fluid">
-                    <ul class="navbar-nav me-auto" style="margin-left:15%"> <!-- Itens da esquerda -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><b>Quem somos nós</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><b>Informações do sistema</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><b>Objetivos da Clínica</b></a>
-                        </li>
-                    </ul>
-        
-                    <ul class="navbar-nav" style="margin-right:15%"> <!-- Itens das redes sociais -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <x-descricao/>
         
         <x-nav/>
 
@@ -106,157 +78,162 @@
                 <div class="card text-center shadow-lg p-3 mb-4 bg-blue">
                     <h3 class="fw-bold text-white">Seus dados</h3>
                 </div>
-             
-                    <div class="row">
-                        <div class="col-md-7">
-                            <form action="" method="POST">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card text-center shadow-lg p-3 mb-4 bg-blue">
-                                        <h3 class="fw-bold text-white">Suas Informações</h3>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-8">  
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                               
-                                                    <label for="email" class="form-label"><b>Nome:</b></label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nome..." name="nome">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                  
-                                                    <label for="email" class="form-label"><b>Email:</b></label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text"><i class="fa fa-google-plus-official" aria-hidden="true"></i></span>
-                                                        <input type="email" class="form-control" placeholder="Email..." name="email">
-                                                    </div>
-                                                </div>
-                                            
-                                                <div class="col-md-12">
-                                                    <label for="email" class="form-label"><b>CPF:</b></label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="CPF..." name="cpf"  oninput="mascaraCPF(this)">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <label for="email" class="form-label"><b>Número:</b></label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Número..." name="numero">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <label for="email" class="form-label"><b>Data Nascimento:</b></label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-                                                        <input type="date" class="form-control" placeholder="Enter password" name="data_nascimento">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <label for="email" class="form-label"><b>Data de Cadastro:</b></label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
-                                                        <input type="date" class="form-control" placeholder="Enter password" name="data_cadastro">
-                                                    </div>
-                                                </div>
-                                            </div>
-        
+    
+        <div class="row">
+            <div class="col-md-7">
+                <form action="" method="POST">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card text-center shadow-lg p-3 mb-4 bg-blue">
+                            <h3 class="fw-bold text-white">Suas Informações</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">  
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    
+                                        <label for="email" class="form-label"><b>Nome:</b></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Nome..." name="nome" value="{{$user['nome']}}">
                                         </div>
-                                        <div class="col-md-4">  
-                                            <div class="card h-100 shadow border-0">
-                                                <img class="card-img-top cards_ajuste" src="pessoa.jpg" alt="Card image ">
-                                                <div class="card-body">
-                                                    <label for="inputImagem1" class="form-label fw-bold">Atualizar Foto</label>
-                                                    <input class="form-control" type="file" name="inputImagemPerfil" id="inputImagemPerfil" accept="image/*">
-                
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        
+                                        <label for="email" class="form-label"><b>Email:</b></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-google-plus-official" aria-hidden="true"></i></span>
+                                            <input type="email" class="form-control" placeholder="Email..." name="email" value="{{$user['email']}}">
                                         </div>
-
                                     </div>
-                                    <br>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-outline-success" data-bs-dismiss="modal"><b>Atualizar Seus Dados</b></button>
+                                
+                                    <div class="col-md-12">
+                                        <label for="email" class="form-label"><b>CPF:</b></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="CPF..." name="cpf"  oninput="mascaraCPF(this)"
+                                            value="{{$user['cpf']}}">
+                                        </div>
                                     </div>
-             
-                                    </form>
+                                    <div class="col-md-12">
+                                        <label for="email" class="form-label"><b>Número:</b></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Número..." name="numero"
+                                            value="{{$user['telefone']}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email" class="form-label"><b>Data Nascimento:</b></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+                                            <input type="date" class="form-control" placeholder="Enter password" name="data_nascimento"
+                                            value="{{$user['data_nascimento']}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email" class="form-label"><b>Data de Cadastro:</b></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
+                                            <input type="date" class="form-control" placeholder="Enter password" name="data_cadastro"
+                                            value="{{$user['data_cadastro']}}">
+                                        </div>
+                                    </div>
+                                </div>
 
+                            </div>
+                            <div class="col-md-4">  
+                                <div class="card h-100 shadow border-0">
+                                    <img class="card-img-top cards_ajuste" src="pessoa.jpg" alt="Card image ">
+                                    <div class="card-body">
+                                        <label for="inputImagem1" class="form-label fw-bold">Atualizar Foto</label>
+                                        <input class="form-control" type="file" name="inputImagemPerfil" id="inputImagemPerfil" accept="image/*">
+    
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-md-5">
-                            <form action="" method="POST">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card text-center shadow-lg p-3 mb-4 bg-blue">
-                                        <h3 class="fw-bold text-white">Seu Endereço</h3>
-                                    </div>
-
-                                   
-                                    <div class="row">
-                                        <div class="col-md-12">            
-                                            <label for="email" class="form-label"><b>CEP:</b></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" placeholder="CEP..." name="cep"  onkeyup="setarCepMascara(event)" maxlength="9">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                           
-                                            <label for="email" class="form-label"><b>Logradouro:</b></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-map" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" placeholder="Logradouro..." name="logradouro">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="email" class="form-label"><b>Bairro:</b></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-building" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" placeholder="Bairro..." name="bairro">
-                                            </div>
-                                        </div>
-                                       
-                                        <div class="col-md-12">
-                                            <label for="email" class="form-label"><b>Complemento:</b></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-street-view" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" placeholder="Complemento..." name="complemento">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="email" class="form-label"><b>Numero:</b></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" placeholder="Numero..." name="numero">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="email" class="form-label"><b>UF:</b></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" placeholder="UF..." name="uf">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-outline-success" data-bs-dismiss="modal"><b>Atualizar Endereço</b></button>
-                                    </div>
-                                </form>
-                                </div>
-                            </div>
-
+                        <br>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-outline-success" data-bs-dismiss="modal"><b>Atualizar Seus Dados</b></button>
                         </div>
+    
+                        </form>
+
                     </div>
-                   
-                  </form>
-               
+                </div>
+
+            </div>
+            <div class="col-md-5">
+                <form action="" method="POST">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card text-center shadow-lg p-3 mb-4 bg-blue">
+                            <h3 class="fw-bold text-white">Seu Endereço</h3>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="col-md-12">            
+                                <label for="email" class="form-label"><b>CEP:</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-home" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="CEP..." name="cep"  onkeyup="setarCepMascara(event)" maxlength="9"
+                                    value="{{$user['cep']}}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                
+                                <label for="email" class="form-label"><b>Logradouro:</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-map" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="Logradouro..." name="logradouro">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="email" class="form-label"><b>Bairro:</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-building" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="Bairro..." name="bairro">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <label for="email" class="form-label"><b>Complemento:</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-street-view" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="Complemento..." name="complemento">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="email" class="form-label"><b>Numero:</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="Numero..." name="numero">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="email" class="form-label"><b>UF:</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="UF..." name="uf">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-outline-success" data-bs-dismiss="modal"><b>Atualizar Endereço</b></button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        </form>
+    
             </div>
         </div>
 

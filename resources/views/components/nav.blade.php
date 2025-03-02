@@ -24,7 +24,7 @@
     <div class="container-fluid" style="margin-left:15%">
         <!-- Logo -->
         <a class="navbar-brand ms-3" href="principal.html" >
-            <img class="img-fluid_v2" src="logo_clinica.png" alt="Logo" height="40">
+            <img class="img-fluid_v2" src="{{ asset('assets/logo_clinica.PNG') }}" alt="Logo" height="40">
         </a>
 
         <!-- Botão do menu para mobile -->
