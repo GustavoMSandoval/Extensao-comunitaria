@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\ClinicaController;
 use App\Http\Controllers\UserController;
 use App\Models\Clinica;
@@ -30,7 +31,9 @@ Route::middleware(['auth']) ->group(function() {
     Route::put('edit-clinica', [ClinicaController::class, 'edit']);
     
     Route::delete('delete-clinica', [ClinicaController::class, 'delete']);
-    
+
+    Route::post('/chatbot', [ChatbotController::class, 'receberMensagem']);
+
     
     Route::get('/locais', function() {
 
