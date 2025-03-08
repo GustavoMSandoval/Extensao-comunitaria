@@ -23,11 +23,13 @@ Route::middleware(['auth']) ->group(function() {
     
     Route::post('/logout', [UserController::class, 'logout']);
 
+    Route::post('/edit-user', [UserController::class, 'edit']);
+
     Route::post('register-clinica', [ClinicaController::class, 'register']);
     
-    Route::put('edit-clinica');
+    Route::put('edit-clinica', [ClinicaController::class, 'edit']);
     
-    Route::delete('delete-clinica');
+    Route::delete('delete-clinica', [ClinicaController::class, 'delete']);
     
     
     Route::get('/locais', function() {

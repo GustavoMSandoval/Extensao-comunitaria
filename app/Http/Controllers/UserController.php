@@ -30,6 +30,18 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function edit(Request $request) {
+        $incomingFields =  $request->validate([
+            'id' => ['required'],
+            'nome' => ['required', 'min:3'],
+            'email' => ['required', 'email', Rule::unique('users','email')],
+            'cpf' => ['required'],
+            'cep' => ['required', 'min:8'],
+            'senha' => ['required', 'min:8'],
+            'confirmed_senha' => ['required', 'min:8', 'same:senha'],
+        ]);
+    }
+
     public function login(Request $request) {
         $incomingFields = $request->validate([
             'email' => 'required|email',

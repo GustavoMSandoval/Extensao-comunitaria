@@ -47,12 +47,16 @@
             <hr class="my-2">
             
             <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-primary" id="editarAgendamentos|1">
-                    <i class="bi bi-pencil"></i> <b>Editar</b>
-                </button>
-                <button class="btn btn-outline-danger" id="CancelarAgendamento|1">
-                    <i class="bi bi-x-circle"></i> <b>Inativar</b>
-                </button>
+                  <button type="submit" class="btn btn-outline-primary" id="editarAgendamentos|1">
+                      <i class="bi bi-pencil"></i> <b>Editar</b>
+                      <input type="hidden" name="id" value="{{ $id }}">
+                  </button>
+                <form action="delete-clinica" method="POST">
+                  <button type="submit" class="btn btn-outline-danger" id="CancelarAgendamento|1">
+                      <i class="bi bi-x-circle"></i> <b>Inativar</b>
+                      <input type="hidden" name="id" value="{{ $id }}">
+                  </button>
+                </form>
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@
             <div class="card-header bg-blue">
 
                 <div class="div_img">
-                    <img class="img-fluid_v2 mx-auto d-block" src="logo_clinica.png">
+                    <img class="img-fluid_v2 mx-auto d-block" src="{{asset('assets/logo_clinica.PNG')}}">
                 </div>
                
             </div>
